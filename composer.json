@@ -1,0 +1,15 @@
+{
+    "name": "mario1515/laravel-cart",
+    "description": "A Laravel Package that includes an Ecommerce Cart",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^11.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mario1515\\LaravelCart\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
