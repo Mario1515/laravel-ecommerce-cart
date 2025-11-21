@@ -1,5 +1,5 @@
 {
-    "name": "mario1515/laravel-cart",
+    "name": "mario1515/laravel-eccomerce-cart",
     "description": "A Laravel Package that includes an Ecommerce Cart",
     "type": "library",
     "require": {
