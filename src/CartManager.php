@@ -1,6 +1,6 @@
 <?php
 
-namespace Mario1515\LaravelCart\Cart;
+namespace Mario1515\LaravelCart;
 
 use Mario1515\LaravelCart\CartService;
 use Mario1515\LaravelCart\Models\Cart;

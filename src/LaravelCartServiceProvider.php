@@ -4,7 +4,7 @@ namespace Mario1515\LaravelCart;
 
 use Illuminate\Support\ServiceProvider;
 
-use Mario1515\LaravelCart\Cart\CartManager;
+use Mario1515\LaravelCart\CartManager;
 use Mario1515\LaravelCart\Repositories\CartRepository;
 
 class LaravelCartServiceProvider extends ServiceProvider
