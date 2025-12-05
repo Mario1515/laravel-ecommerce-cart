@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Session;
 
 use Mario1515\LaravelCart\Models\Cart;
 use Mario1515\LaravelCart\Models\CartItem;
+use Mario1515\LaravelCart\Models\CartPersonalData;
 
 class CartRepository
 {
@@ -47,5 +48,21 @@ class CartRepository
             ->with('items')
             ->where('session_id', $sessionId)
             ->first();
+    }
+
+    public function addPersonalData(Cart $cart, array $data): CartPersonalData
+    {
+        $personalData = $cart
+            ->personalData()
+            ->updateOrCreate([], [
+                'first_name' => data_get($data, 'first_name'),
+                'last_name'  => data_get($data, 'last_name'),
+                'email'      => data_get($data, 'email'),
+                'phone'      => data_get($data, 'phone'),
+                'additional' => data_get($data, 'additional', []),
+            ]);
+
+        $cart->update([ 'cart_personal_data_id' => $personalData->id ]);
+        return $personalData;
     }
 }

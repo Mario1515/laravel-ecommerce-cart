@@ -5,6 +5,7 @@ namespace Mario1515\LaravelCart;
 use Mario1515\LaravelCart\CartService;
 use Mario1515\LaravelCart\Models\Cart;
 use Mario1515\LaravelCart\Models\CartItem;
+use Mario1515\LaravelCart\Models\CartPersonalData;
 
 class CartManager
 {
@@ -29,5 +30,10 @@ class CartManager
     public function getCart(): ?Cart
     {
         return $this->service->getCart();
+    }
+
+    public function addPersonalData(array $data): CartPersonalData
+    {
+        return $this->service->addPersonalData($data);
     }
 }
