@@ -52,17 +52,21 @@ class CartRepository
 
     public function addPersonalData(Cart $cart, array $data): CartPersonalData
     {
-        $personalData = $cart
-            ->personalData()
-            ->updateOrCreate([], [
+        $personalData = CartPersonalData::updateOrCreate(
+            ['id' => $cart->cart_personal_data_id],
+            [
                 'first_name' => data_get($data, 'first_name'),
                 'last_name'  => data_get($data, 'last_name'),
                 'email'      => data_get($data, 'email'),
                 'phone'      => data_get($data, 'phone'),
                 'additional' => data_get($data, 'additional', []),
-            ]);
+            ]
+        );
 
-        $cart->update([ 'cart_personal_data_id' => $personalData->id ]);
+        $cart->update([
+            'cart_personal_data_id' => $personalData->id,
+        ]);
+
         return $personalData;
     }
 }
