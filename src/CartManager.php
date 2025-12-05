@@ -21,8 +21,13 @@ class CartManager
         ]);
     }
 
-    public function removeItem(int $itemId): Cart
+    public function removeItem(int $itemId): void
     {
-        return $this->service->removeItem($itemId);
+        $this->service->removeItem($itemId);
+    }
+
+    public function getCart(): ?Cart
+    {
+        return $this->service->getCart();
     }
 }

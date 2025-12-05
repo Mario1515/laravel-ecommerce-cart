@@ -33,11 +33,11 @@ class LaravelCartServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
 
-            $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
-            $this->publishes([
-                __DIR__ . '/database/migrations' => $this->app->databasePath('migrations'),
-            ], 'laravel-cart-migrations');
+        $this->publishes([
+            __DIR__ . '/database/migrations' => $this->app->databasePath('migrations'),
+        ], 'laravel-cart-migrations');
 
             //escape name collision Vladi will show me how. 
             //sleep 1 to avoid name collisions

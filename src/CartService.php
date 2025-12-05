@@ -2,6 +2,7 @@
 
 namespace Mario1515\LaravelCart;
 
+use Mario1515\LaravelCart\Models\Cart;
 use Mario1515\LaravelCart\Models\CartItem;
 use Mario1515\LaravelCart\Repositories\CartRepository;
 
@@ -19,5 +20,10 @@ class CartService
     public function removeItem(int $itemId): void
     {
         $this->cartRepo->removeItem($itemId);
+    }
+
+    public function getCart(): ?Cart
+    {
+        return $this->cartRepo->getCart();
     }
 }

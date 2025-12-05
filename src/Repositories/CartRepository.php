@@ -38,4 +38,14 @@ class CartRepository
             ->limit(1)
             ->delete();
     }
+
+    public function getCart(): ?Cart
+    {
+        $sessionId = Session::getId();
+
+        return Cart::query()
+            ->with('items')
+            ->where('session_id', $sessionId)
+            ->first();
+    }
 }
